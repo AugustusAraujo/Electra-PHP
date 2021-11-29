@@ -1,0 +1,23 @@
+{
+    "name": "gustin/electraphp",
+    "description": "Electra PHP",
+    "version": "1.0",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gustin\\Electraphp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AugustusAraujo",
+            "email": "augustusaraujo13@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">7.3"
+    }
+}
