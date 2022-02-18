@@ -1,13 +1,11 @@
+Em Manutenção
 <?php
+/*
+namespace gustin\electraphp;
 
-namespace Electra\Mail;
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-
-require './vendor/autoload.php';
+use \PHPMailer\PHPMailer\PHPMailer;
+use \PHPMailer\PHPMailer\SMTP;
+use \PHPMailer\PHPMailer\Exception;
 
 interface MailInterface
 {
@@ -50,3 +48,4 @@ class MailSender implements MailInterface
         }
     }
 }
+*/

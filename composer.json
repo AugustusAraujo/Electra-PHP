@@ -1,7 +1,7 @@
 {
     "name": "gustin/electraphp",
     "description": "Electra PHP",
-    "version": "1.0",
+    "version": "1.",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -13,10 +13,10 @@
         {
             "name": "AugustusAraujo",
             "email": "augustusaraujo13@gmail.com",
-            "role": "Developer"
+            "role": "Developer & Owner"
         }
     ],
-    "minimum-stability": "stable",
+    
     "require": {
         "php":">7.4",
         "phpmailer/phpmailer": "^6.5"
