@@ -54,7 +54,10 @@ class Files
             echo "Arquivo Inválido.";
             exit();
         }
-        
+        if(filesize($filename) == 0){
+            echo "Arquivo vazio.";
+            exit;
+        }
         try {
             $handle = fopen($filename,"r");
             $fileread = fread($handle,filesize($filename));
