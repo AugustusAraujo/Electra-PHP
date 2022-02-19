@@ -4,67 +4,70 @@ namespace gustin\electraphp;
 
 class Files
 {
+    /**
+     * @param string $filename
+     * @return string
+     */
     public static function createFile($filename)
     {
-        if($filename == ""){
-            echo "Arquivo Inválido.";
-            exit();
+        if ($filename == "") {
+            return "Arquivo Inválido.";
         }
         if (empty($filename) || !isset($filename) || !$filename) {
-            echo "Arquivo Inválido.";
-            exit();
+            return "Arquivo Inválido.";
         }
-        if(file_exists($filename)){ 
-            echo "Arquivo já existente.";
-            exit();
+        if (file_exists($filename)) {
+            return "Arquivo já existente.";
         };
-        
         try {
-            if(@fopen($filename, "x")) echo "Arquivo criado";
-            @fclose($filename);
-            return true;
+            if (@fopen($filename, "x")) {
+                @fclose($filename);
+                return "Arquivo criado";
+            };
         } catch (\Exception $e) {
-            echo ("Erro ao criar arquivo.");
-            exit();
+            return "Erro ao criar arquivo.";
         }
     }
 
+    /**
+     * @param string $filename
+     * @return string
+     */
     public static function removeFile($filename)
     {
         if (empty($filename) || !isset($filename) || !file_exists($filename)) {
-            echo ("Arquivo não existente.");
-            exit();
+            return "Arquivo não existente.";
         }
         try {
-            if(@unlink($filename)){
-                echo "Arquivo removido.";
-                return true;
+            if (@unlink($filename)) {
+                return "Arquivo removido.";
             }
         } catch (\Exception $e) {
-            echo ("Erro ao excluir.");
-            exit();
+            return "Erro ao excluir.";
         }
     }
-    public static function readFile($filename){
-        if($filename == ""){
-            echo "Arquivo Inválido.";
-            exit();
+    /**
+     * @param string $filename
+     * @return string
+     */
+    public static function readFile($filename)
+    {
+        if ($filename == "") {
+            return "Arquivo Inválido.";
         }
         if (empty($filename) || !isset($filename) || !$filename) {
-            echo "Arquivo Inválido.";
-            exit();
+            return "Arquivo Inválido.";
         }
-        if(filesize($filename) == 0){
-            echo "Arquivo vazio.";
-            exit;
+        if (filesize($filename) == 0) {
+            return "Arquivo vazio.";
         }
         try {
-            $handle = fopen($filename,"r");
-            $fileread = fread($handle,filesize($filename));
-            return $fileread;
+            $handle = fopen($filename, "r");
+            $fileread = fread($handle, filesize($filename));
             fclose($filename);
+            return $fileread;
         } catch (\Exception $e) {
-            echo ("Erro ao criar arquivo.");
+            throw new \Error("Erro ao criar arquivo.");
         }
     }
 }

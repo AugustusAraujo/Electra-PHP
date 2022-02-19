@@ -1,0 +1,1 @@
+<!-- Fazer classe de error tipo laravel -->
